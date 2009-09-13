@@ -1,0 +1,2 @@
+Provides a complete double-dispatch type conversion system.
+All the ruby core conversions are available by default.

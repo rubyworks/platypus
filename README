@@ -1,0 +1,53 @@
+= OpenStructable
+
+  http://death.rubyforge.org
+
+
+== DESCRIPTION
+
+Provides a generic simple type conversion utility. All the ruby core
+conversions are available by default.
+
+
+== FEATURES/ISSUES
+
+* Uses doulble-dispatch.
+* Fully generic type conversion system.
+* Built-in support for most core classes.
+
+
+== RELEASE NOTES
+
+Please see RELEASE file.
+
+
+== SYNOPSIS
+
+   "1234".cast_to Float     => 1234.0  (Float)
+   Time.cast_from("6:30")   => 1234.0   (Time)
+
+
+== HOW TO INSTALL
+
+To install with RubyGems simply open a console and type:
+
+  gem install typecast
+
+Local installation requires Setup.rb (gem install setup),
+then download the tarball package and type:
+
+  tar -xvzf typecast-1.0.0.tgz
+  cd typecast-1.0.0
+  sudo setup.rb all
+
+Windows users use 'ruby setup.rb all'.
+
+
+== COPYING
+
+Copyright (c) 2004 Jonas Pfenniger
+
+This program is ditributed unser the terms of the Ruby license.
+
+See LICENSE file for details.
+
