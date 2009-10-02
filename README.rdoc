@@ -1,6 +1,7 @@
-= OpenStructable
+= Typecast
 
-  http://death.rubyforge.org
+* http://rubyworks.github.com/typecast
+* http://github.com/rubyworks/typecast
 
 
 == DESCRIPTION
@@ -18,7 +19,7 @@ conversions are available by default.
 
 == RELEASE NOTES
 
-Please see RELEASE file.
+Please see HISTORY file.
 
 
 == SYNOPSIS
@@ -27,7 +28,7 @@ Please see RELEASE file.
    Time.cast_from("6:30")   => 1234.0   (Time)
 
 
-== HOW TO INSTALL
+== INSTALLATION
 
 To install with RubyGems simply open a console and type:
 
@@ -49,5 +50,5 @@ Copyright (c) 2004 Jonas Pfenniger
 
 This program is ditributed unser the terms of the Ruby license.
 
-See LICENSE file for details.
+See LICENSE or COPYING file for details.
 
