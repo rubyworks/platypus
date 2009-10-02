@@ -1,9 +1,0 @@
----
-rubygems:
-  service: Box
-  types  : [gem, gz]
-  include: [bin, demo, lib, meta, test, "[A-Z]*"]
-  exclude: ~
-  remanifest: false
-  active : true
-
