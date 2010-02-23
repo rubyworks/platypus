@@ -1,0 +1,19 @@
+#!mast -x Syckfile bin lib meta test [A-Z]*
+lib/typecast.rb
+meta/authors
+meta/collection
+meta/contact
+meta/created
+meta/description
+meta/homepage
+meta/license
+meta/name
+meta/released
+meta/repository
+meta/summary
+meta/version
+test/test_typecast.rb
+LICENSE
+README.rdoc
+HISTORY
+COPYING
