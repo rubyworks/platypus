@@ -1,0 +1,17 @@
+--- !ruby/object:RDoc::RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Special Extensions
+constants: []
+
+full_name: Class
+includes: []
+
+instance_methods: []
+
+name: Class
+superclass: Object

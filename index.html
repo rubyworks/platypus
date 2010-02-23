@@ -1,142 +1,121 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
-  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-
   <title>Typecast</title>
-
-  <link type="text/css" media="screen" href="rdoc.css" rel="stylesheet" />
-
-  <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
-  <script src="js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
-  <script src="js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
-  <script src="js/pop.js" type="text/javascript" charset="utf-8"></script>
-
-  
+  <link REL="SHORTCUT ICON" HREF="assets/ruby.png">
+  <style>
+    body { font: 12pt sans-serif; padding: 0; margin: 0; }
+    pre { color: green; font-family: monospace; }
+    #container { margin: 0 auto; width: 800px; }
+    #title { color: #dddddd; border-bottom: 1px solid gray; padding: 20px; }
+    #nav { text-align: right; }
+    #nav a { color: black; text-decoration: none; padding: 3px; }
+    #nav a:hover { background: black; color: white; }
+    #project { font: 22pt sans-serif; color: black; }
+    #package { font: bold 42pt sans-serif; color: red; }
+    #corpus { padding: 0 20px 20px 20px; }
+    #ad { text-align: center; padding: 20px; border-top: 1px solid #ccc; }
+    #copy { border-top: 1px solid #ccc; font-size: 70%; padding: 20px; }
+  </style>
 </head>
-<body class="indexpage">
 
-  <div class="head">
-    <h1>Typecast</h1>
+<body>
+<div id="container">
+
+  <div id="title">
+    <div id="project">Rubyworks</div>
+    <div id="package">Typecast</div>
   </div>
 
-  <div id="metadata">
-    <div id="project-metadata">
-
-      
-      
-      <div id="fileindex-section" class="section project-section">
-        <h3 class="section-header">Files</h3>
-        <ul>
-        
-          <li class="file"><a href="COPYING.html">COPYING</a></li>
-        
-          <li class="file"><a href="HISTORY.html">HISTORY</a></li>
-        
-          <li class="file"><a href="LICENSE.html">LICENSE</a></li>
-        
-          <li class="file"><a href="README_rdoc.html">README.rdoc</a></li>
-        
-        </ul>
-      </div>
-      
-
-      <div id="classindex-section" class="section project-section">
-        <h3 class="section-header">Class Index
-          <span class="search-toggle"><img src="images/find.png"
-            height="16" width="16" alt="[+]"
-            title="show/hide quicksearch" /></span></h3>
-        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
-        <fieldset>
-          <legend>Quicksearch</legend>
-          <input type="text" name="quicksearch" value=""
-            class="quicksearch-field" />
-        </fieldset>
-        </form>
-
-        <ul class="link-list">
-        
-          <li class="module"><a href="TypeCast.html">TypeCast</a></li>
-        
-          <li class="module"><a href="TypeCast/Class.html">TypeCast::Class</a></li>
-        
-          <li class="module"><a href="TypeCast/Object.html">TypeCast::Object</a></li>
-        
-          <li class="class"><a href="TypeCastException.html">TypeCastException</a></li>
-        
-        </ul>
-        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
-      </div>
-
-      <!-- METHODS -->
-      <div id="methodindex-section" class="section project-section">
-        <h3 class="section-header">Method Index</h3>
-        <ul>
-          
-            <li><a href="TypeCast/Class.html#M000001">#cast_from &mdash; TypeCast::Class</a></li>
-          
-            <li><a href="TypeCast/Object.html#M000000">#cast_to &mdash; TypeCast::Object</a></li>
-          
-        </ul>
-      </div>
-
-      
-
-    </div>
-
-    <!-- ISSUE: Can't find RDoc::Generator::Redfish::VERSION -->
-    <div id="validator-badges">
-      Generated with <a href="http://github.com/proutils/rdazzle">Razzle Dazzle Redfish</a>.<br/>
-      <a href="http://validator.w3.org/check/referer">[Validate]</a>
-    </div>
+  <div id="nav">
+    <a href="http://wiki.github.com/rubyworks/typecast/">Documentation</a> &middot;
+    <a href="rdoc/index.html">API Reference</a> &middot;
+    <a href="http://github.com/rubyworks/typecast/">Development</a>
   </div>
 
-<!--
-  
-  
-  <h2>Files</h2>
-  <ul>
-    
-      <li class="file"><a href="COPYING.html">COPYING</a></li>
-    
-      <li class="file"><a href="HISTORY.html">HISTORY</a></li>
-    
-      <li class="file"><a href="LICENSE.html">LICENSE</a></li>
-    
-      <li class="file"><a href="README_rdoc.html">README.rdoc</a></li>
-    
-  </ul>
-  
+  <div id="corpus">
+    <h2>Overview</h2>
+    <p>Typecast provides a simple generic type conversion system. All the ruby core
+    conversions are available by default.</p>
 
-  <h2>Classes/Modules</h2>
-  <ul>
-    
-    <li class="module"><a href="TypeCast.html">TypeCast</a></li>
-    
-    <li class="module"><a href="TypeCast/Class.html">TypeCast::Class</a></li>
-    
-    <li class="module"><a href="TypeCast/Object.html">TypeCast::Object</a></li>
-    
-    <li class="class"><a href="TypeCastException.html">TypeCastException</a></li>
-    
-  </ul>
+    <p>To implement a new type conversion, you have two choices. Given:</p>
 
-  <h2>Methods</h2>
-  <ul>
-    
-      <li><a href="TypeCast/Class.html#M000001">#cast_from &mdash; TypeCast::Class</a></li>
-    
-      <li><a href="TypeCast/Object.html#M000000">#cast_to &mdash; TypeCast::Object</a></li>
-    
-  </ul>
--->
+     <pre>
+      class CustomType
+        def initialize(my_var)
+          @my_var = my_var
+        end
+      end
+     </pre>
 
-  
-    <p>This is the API documentation for 'Typecast'.</p>
-  
+     <p> 1) Define a to_class_name instance method </p>
 
+    <pre>
+      class CustomType
+        def to_string
+          my_var.to_s
+        end
+      end
+
+      c = CustomType.new 1234
+      s.cast_to String   =>  "1234" (String)
+    </pre>
+
+    <p> 2. Define a from_class_name class method </p>
+
+    <pre>
+      class CustomType
+        def self.from_string(str)
+          self.new(str)
+        end
+      end
+
+      "1234".cast_to CustomType  =>  #<CustomType:0xb7d1958c @my_var="1234">
+    </pre>
+
+    <p>Those two methods are equivalent in the result. It was coded like that to
+    avoid the pollution of core classes with tons of to_* methods.</p>
+
+    <p>The standard methods to_s, to_f, to_i, to_a and to_sym are also used by
+    this system if available.</p>
+
+    <p>Usage looks like</p>
+
+    <pre>
+      "1234".cast_to Float     => 1234.0  (Float)
+      Time.cast_from("6:30")   => 1234.0   (Time)
+    </pre>
+
+    <h2>FAQ</h2>
+
+    <p><b>Why didn't you name the `cast_to` method to `to` ?</b></p>
+
+    <p>Even if it would make the syntax more friendly, I suspect it could cause
+    a lot of collisions with already existing code. The goal is that each
+    time you call cast_to, you either get your result, either a
+    TypeCastException.</p>
+  </div>
+
+  <div id="ad">
+    <script type="text/javascript"><!--
+    google_ad_client = "pub-1126154564663472";
+    /* RUBYWORKS 09-10-02 728x90 */
+    google_ad_slot = "0788888658";
+    google_ad_width = 728;
+    google_ad_height = 90;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+    </script>
+  </div>
+
+  <div id="copy">
+    Copyright &copy; 2004 Jonas Pfenniger &amp; Thomas Sawyer
+  </div>
+
+</div>
 </body>
+
 </html>
+
