@@ -2,30 +2,20 @@
 
 <head>
   <title>Typecast</title>
-
+  <link REL="SHORTCUT ICON" HREF="assets/ruby.png">
   <style>
-    body { font: 12pt sans-serif; 
-      padding: 0; margin: 0;
-    }
-    #container {
-      margin: 0 auto;
-    }
-    #title {
-      color: #dddddd;
-      border-bottom: 1px solid gray;
-      padding: 20px;
-    }
-    #project {
-      font: 22pt sans-serif;
-      color: black;
-    }
-    #package {
-      font: bold 42pt sans-serif;
-      color: red;
-    }
-    #corpus {
-      padding: 20px;
-    }
+    body { font: 12pt sans-serif; padding: 0; margin: 0; }
+    pre { color: green; font-family: monospace; }
+    #container { margin: 0 auto; width: 800px; }
+    #title { color: #dddddd; border-bottom: 1px solid gray; padding: 20px; }
+    #nav { text-align: right; }
+    #nav a { color: black; text-decoration: none; padding: 3px; }
+    #nav a:hover { background: black; color: white; }
+    #project { font: 22pt sans-serif; color: black; }
+    #package { font: bold 42pt sans-serif; color: red; }
+    #corpus { padding: 0 20px 20px 20px; }
+    #ad { text-align: center; padding: 20px; border-top: 1px solid #ccc; }
+    #copy { border-top: 1px solid #ccc; font-size: 70%; padding: 20px; }
   </style>
 </head>
 
@@ -35,6 +25,12 @@
   <div id="title">
     <div id="project">Rubyworks</div>
     <div id="package">Typecast</div>
+  </div>
+
+  <div id="nav">
+    <a href="http://wiki.github.com/rubyworks/typecast/">Documentation</a> &middot;
+    <a href="rdoc/index.html">API Reference</a> &middot;
+    <a href="http://github.com/rubyworks/typecast/">Development</a>
   </div>
 
   <div id="corpus">
@@ -92,7 +88,7 @@
 
     <h2>FAQ</h2>
 
-    <p>Why didn't you name the `cast_to` method to `to` ?</p>
+    <p><b>Why didn't you name the `cast_to` method to `to` ?</b></p>
 
     <p>Even if it would make the syntax more friendly, I suspect it could cause
     a lot of collisions with already existing code. The goal is that each
@@ -100,9 +96,22 @@
     TypeCastException.</p>
   </div>
 
+  <div id="ad">
+    <script type="text/javascript"><!--
+    google_ad_client = "pub-1126154564663472";
+    /* RUBYWORKS 09-10-02 728x90 */
+    google_ad_slot = "0788888658";
+    google_ad_width = 728;
+    google_ad_height = 90;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+    </script>
+  </div>
+
   <div id="copy">
-    Copyright &copy; 2004 Thomas Sawyer and all respective authors.
-    Ruby License
+    Copyright &copy; 2004 Jonas Pfenniger &amp; Thomas Sawyer
   </div>
 
 </div>
