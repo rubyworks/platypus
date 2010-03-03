@@ -1,4 +1,12 @@
-= Typecast
+= TypeCast
+     _   ___
+    / \ /   \
+    \. |: cc|
+     (.|:,---,
+     (.|: \ c|
+     (.    y-'
+      \ _ /
+       m m
 
 * http://rubyworks.github.com/typecast
 * http://github.com/rubyworks/typecast
@@ -6,15 +14,15 @@
 
 == DESCRIPTION
 
-Provides a generic simple type conversion utility. All the ruby core
-conversions are available by default.
+Provides a generalize type conversion system, and overload system
+and a typeface. Overload methods using type specific signitures.
 
 
-== FEATURES/ISSUES
+== FEATURES
 
-* Uses doulble-dispatch.
-* Fully generic type conversion system.
-* Built-in support for most core classes.
+* Double-dispatch type conversion.
+* Elegant method overloading.
+* Custom type interfaces.
 
 
 == RELEASE NOTES
@@ -24,8 +32,36 @@ Please see HISTORY file.
 
 == SYNOPSIS
 
+=== Type Conversions
+
    "1234".cast_to Float     => 1234.0  (Float)
-   Time.cast_from("6:30")   => 1234.0   (Time)
+
+   Time.cast_from("6:30")   => 1234.0  (Time)
+
+=== Method Overloading
+
+To overload a method use the #overload method to define
+new functionality based on a specified type interface.
+
+   class X
+     include Overloadable
+
+     def x
+       "hello"
+     end
+
+     type Integer
+
+     def x(i)
+       i
+     end
+
+     type String, String
+
+     def x(s1, s2)
+       [s1, s2]
+     end
+   end
 
 
 == INSTALLATION
@@ -46,6 +82,7 @@ Windows users use 'ruby setup.rb all'.
 
 == COPYING
 
+Copyright (c) 2010 Thomas Sawyer
 Copyright (c) 2004 Jonas Pfenniger
 
 This program is ditributed unser the terms of the Ruby license.

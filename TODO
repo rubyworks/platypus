@@ -1,0 +1,12 @@
+overload.rb needs an overhaul!
+
+Take a look at the github "Functor" project (yea I know, terrible name for a overload system!) and see if that design
+isn't a better approach.
+
+Otherwise, just clean up the current code --main issue is the use of xGeneric aliases.
+
+* Consider how this might fit in with method signitures, overloading,
+and expiremental euphoria-like type system.
+
+* Look to implement to_int, to_mailtext, to_r, to_rfc822text and to_str.
+

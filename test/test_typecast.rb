@@ -1,4 +1,4 @@
-require 'typecast'
+require 'platypus/typecast'
 require 'test/unit'
 
 class TC_TypeCast < Test::Unit::TestCase
@@ -47,8 +47,8 @@ class TC_TypeCast < Test::Unit::TestCase
   def test_no_converter
     "sfddsf".cast_to( ::Regexp )
     assert(1+1==3, 'should not get here')
-  rescue TypeCastException => ex
-    assert_equal(TypeCastException, ex.class)
+  rescue Exception => ex
+    assert_equal(TypeError, ex.class)
   end
 end
 

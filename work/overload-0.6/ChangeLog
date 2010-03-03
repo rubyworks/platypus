@@ -1,0 +1,65 @@
+Fri Jan  3 03:51:54 2003  Nobuyoshi Nakada  <nobu.nakada@nifty.ne.jp>
+
+	* overload.rb: use Object#class instead of Object#type.
+
+Tue Feb  5 16:44:32 2002  Nobuyoshi Nakada  <nobu.nakada@nifty.ne.jp>
+
+	* test_overload.rb: 1.6 support.
+
+	* overload.rb: ditto.
+
+	* overload.rb (Method): made methods private. no longer extend
+	  Method::Overload.
+
+	* overload.rb (Module): made methods private.
+
+Tue Dec 18 04:27:12 2001  Nobuyoshi Nakada  <nobu.nakada@nifty.ne.jp>
+
+	* test_overload.rb (TestOverload#do_dispatch): added test for
+	  pattern match.
+
+	* test_overload.rb (TestOverload#do_signature): ditto.
+
+	* test_overload.rb (TestOverload#do_overload): ditto.
+
+	* test_overload.rb (TestOverload#do_test_match): ditto.
+
+	* test_overload.rb (TestOverload#do_test_nomatch): error message
+	  format changed.
+
+	* test_overload.rb (TestOverload#test_cvar): methods are 4.
+
+	* test_overload.rb (TestOverload#test_*_match): added.
+
+	* test_overload.rb (TestOverload#test_overload_nomatch): exception
+	  changed.
+
+Tue Dec 18 03:56:42 2001  Nobuyoshi Nakada  <nobu.nakada@nifty.ne.jp>
+
+	* overload.rb (Method::Signature#===): return false when
+	  StarndardError occurred.
+
+Mon Dec 17 14:41:31 2001  Nobuyoshi Nakada  <nobu.nakada@nifty.ne.jp>
+
+	* MANIFEST: added ChangeLog
+
+	* overload.rb (Method::Signature#nomatch): added.
+
+	* overload.rb (Method::Signature#to_str): added.
+
+	* overload.rb (Method::Signature#inspect): separate to_str.
+
+	* overload.rb (Method::Signature#to_s): ditto.
+
+	* overload.rb (Method::Overload.dispatch): use Signature#nomatch.
+
+	* test_overload.rb (TestOverload::do_test_nomatch):
+	  Signature#inspect changed.
+
+Mon Dec 13 01:56:12 2001  Nobuyoshi Nakada  <nobu.nakada@nifty.ne.jp>
+
+	* overload.rb (Method::Signature#invalid): improve error message.
+
+	* overload.rb (Method::Overload.dispatch): ditto.
+
+	* overload.rb (Method::Signature#inspect): use Array#inspect.
