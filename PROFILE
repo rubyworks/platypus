@@ -1,0 +1,23 @@
+--- 
+title  : Typecast
+suite  : rubyworks 
+summary: Double-dispatch Type Conversion System
+license: MIT
+created: 2004-01-01
+
+copyright:
+  Copyright (c) 2004 Thomas Sawyer
+
+authors:
+  - Jonas Pfenniger
+  - Thomas Sawyer
+
+description:
+  Provides a complete double-dispatch type conversion system.
+  All the ruby core conversions are available by default.
+
+resources:
+  homepage: http://rubyworks.github.com/typecast
+  forum: http://googlegroups/group/rubyworks-mailinglist
+
+
