@@ -4,17 +4,19 @@
   <title>Typecast</title>
   <link REL="SHORTCUT ICON" HREF="assets/ruby.png">
   <style>
-    body { font: 12pt sans-serif; padding: 0; margin: 0; }
+    body { font: 12pt sans-serif; padding: 0; margin: 0; color: #555; font-weight: bold; }
     pre { color: green; font-family: monospace; }
-    #container { margin: 0 auto; width: 800px; }
-    #title { color: #dddddd; border-bottom: 1px solid gray; padding: 20px; }
-    #nav { text-align: right; }
-    #nav a { color: black; text-decoration: none; padding: 3px; }
+    a { color: #77aaff; }
+    #container { margin: 0 auto; width: 820px; }
+    #title { color: #dddddd; border-bottom: 1px solid #ccc; padding: 20px 5px; margin-bottom: 5px; }
+    #nav { text-align: center; }
+    #nav a { color: #444; text-decoration: none; padding: 3px; }
     #nav a:hover { background: black; color: white; }
-    #project { font: 22pt sans-serif; color: black; }
-    #package { font: bold 42pt sans-serif; color: red; }
-    #corpus { padding: 0 20px 20px 20px; }
-    #ad { text-align: center; padding: 20px; border-top: 1px solid #ccc; }
+    #project { font: 16pt sans-serif; color: black; padding: 0 5px; letter-spacing: 4px; }
+    #package { font: bold 46pt sans-serif; color: #ee9999; }
+    #corpus { padding: 20px 20px 20px 20px; font-family: times; font-size: 1.2em; }
+    #ad { text-align: center; padding: 20px 20px; border-top: 1px solid #ccc; clear: both; }
+    #quote { text-align: center; padding: 20px 20px; border-top: 1px solid #ccc; clear: both; }
     #copy { border-top: 1px solid #ccc; font-size: 70%; padding: 20px; }
   </style>
 </head>
@@ -22,78 +24,39 @@
 <body>
 <div id="container">
 
+  <img src="assets/whyduck.jpg" style="float: right; padding: 0 0 30px 0;" />
+
   <div id="title">
     <div id="project">Rubyworks</div>
-    <div id="package">Typecast</div>
+    <div id="package">Platypus</div>
   </div>
 
   <div id="nav">
-    <a href="http://wiki.github.com/rubyworks/typecast/">Documentation</a> &middot;
-    <a href="rdoc/index.html">API Reference</a> &middot;
-    <a href="http://github.com/rubyworks/typecast/">Development</a>
+    <a href="http://wiki.github.com/rubyworks/platypus">Wiki</a> &middot;
+    <a href="qedoc/index.html">QED</a> &middot;
+    <a href="rdoc/index.html">API</a> &middot;
+    <a href="http://github.com/rubyworks/platpus/issues">Issue</a> &middot;
+    <a href="http://github.com/rubyworks/platpus">Code</a>
   </div>
 
   <div id="corpus">
-    <h2>Overview</h2>
-    <p>Typecast provides a simple generic type conversion system. All the ruby core
-    conversions are available by default.</p>
+    <p>Platypus is a small inter-related collection of type-oriented libraries for Ruby.
+    Among it's quacking talents is a type casting system, a pseudo-superclass and a
+    method overloading mixin.</p>
 
-    <p>To implement a new type conversion, you have two choices. Given:</p>
+    <p>For more information see:
+      <ul>
+        <li><a href="rdoc/index.html">API Reference Guide</a></li>
+        <li><a href="qedoc/index.html">QED Demonstrandum</a></li>
+        <li><a href="http://wiki.github.com/rubyworks/platypus">Wiki-Wiki on GitHub</a></li>
+      </ul>
+    </p>
 
-     <pre>
-      class CustomType
-        def initialize(my_var)
-          @my_var = my_var
-        end
-      end
-     </pre>
+    <br/>
 
-     <p> 1) Define a to_class_name instance method </p>
-
-    <pre>
-      class CustomType
-        def to_string
-          my_var.to_s
-        end
-      end
-
-      c = CustomType.new 1234
-      s.cast_to String   =>  "1234" (String)
-    </pre>
-
-    <p> 2. Define a from_class_name class method </p>
-
-    <pre>
-      class CustomType
-        def self.from_string(str)
-          self.new(str)
-        end
-      end
-
-      "1234".cast_to CustomType  =>  #<CustomType:0xb7d1958c @my_var="1234">
-    </pre>
-
-    <p>Those two methods are equivalent in the result. It was coded like that to
-    avoid the pollution of core classes with tons of to_* methods.</p>
-
-    <p>The standard methods to_s, to_f, to_i, to_a and to_sym are also used by
-    this system if available.</p>
-
-    <p>Usage looks like</p>
-
-    <pre>
-      "1234".cast_to Float     => 1234.0  (Float)
-      Time.cast_from("6:30")   => 1234.0   (Time)
-    </pre>
-
-    <h2>FAQ</h2>
-
-    <p><b>Why didn't you name the `cast_to` method to `to` ?</b></p>
-
-    <p>Even if it would make the syntax more friendly, I suspect it could cause
-    a lot of collisions with already existing code. The goal is that each
-    time you call cast_to, you either get your result, either a
-    TypeCastException.</p>
+    <p>"<i>If it looks like a duck, and quacks like a duck, we have at least to consider
+    the possibility that we have a small aquatic bird of the family anatidae on our hands.</i>"
+    --Douglas Adams</p>
   </div>
 
   <div id="ad">
@@ -111,8 +74,8 @@
   </div>
 
   <div id="copy">
-    Copyright &copy; 2004 Jonas Pfenniger &amp; Thomas Sawyer
-  </div>
+    Copyright &copy; 2010 Thomas Sawyer &middot; Image of "Horse on Duck" by WhyTheLuckyStiff (<i>God Speed, Eigenman)</i>.
+      </div>
 
 </div>
 </body>
