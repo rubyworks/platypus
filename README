@@ -17,46 +17,52 @@
 Platypus provides a generalized type conversion system,
 method overloading and psuedo-classes.
 
-
-== RELEASE NOTES
-
-Please see HISTORY file.
-
-
 == SYNOPSIS
 
-=== Type Conversion
+Type conversion work like a rational duck might expect.
 
    "1234".to(Float)    => 1234.0  (Float)
 
    Time.from("6:30")   => 1234.0  (Time)
 
-=== Method Overloading
+You can of course define your own.
 
-To overload a method use the #overload method to define
-new functionality based on a specified type interface.
+  class X
+    typecast String do |x|
+      "#{x}"
+    end
+  end
+
+To overload a method, mixin the Overloadable module and use the #overload (or #sig)
+method to define new functionality based on a specified type interface.
 
    class X
      include Overloadable
 
-     def x
-       "hello"
+     def f
+       "f"
      end
 
      sig Integer
 
-     def x(i)
-       i
+     def f(i)
+       "f#{i}"
      end
 
      sig String, String
 
-     def x(s1, s2)
-       [s1, s2]
+     def f(s1, s2)
+       [s1, s2].join('+')
      end
    end
 
-=== Psuedo-Classes
+   x = X.new
+
+   x.f          #=> "f"
+   x.f(1)       #=> "f1"
+   x.f("A","B") #=> "A+B"
+
+Finally, the Platypus gives you the Type superclass (aka pseudo-classes).
 
   class KiloType < Type
     x % 1000 == 0
@@ -64,6 +70,13 @@ new functionality based on a specified type interface.
 
   KiloType === 1000
   KiloType === 2000
+
+To learn more about using Platypus see the Demonstrundum{http://rubyworks.github.com/platypus/qedoc}.
+
+
+== RELEASE NOTES
+
+Please see HISTORY file.
 
 
 == INSTALLATION
@@ -86,9 +99,9 @@ Windows users use 'ruby setup.rb all'.
 
 Copyright (c) 2010 Thomas Sawyer
 
-This program is ditributed unser the terms of the Ruby license.
+This program is ditributed unser the terms of the MIT license.
 
-See LICENSE or COPYING file for details.
+See LICENSE file for details.
 
 #--
 *-* mode: rdoc *-*
