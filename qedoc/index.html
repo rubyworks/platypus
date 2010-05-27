@@ -1,0 +1,332 @@
+<html>
+<head>
+  <title>Demonstration</title>
+
+  <style>
+    #container{ margin: 0 auto; width: 800px; }
+
+    /* Debug borders */
+    /* p, li, dt, dd, div, pre, h1, h2, h3, h4, h5, h6 { border: 1px solid red; } */
+
+    body { font-size: 14px; line-height: 20px; margin: 1em 5% 1em 5%; font-family: Verdana, Arial, Helvetica, sans-serif; }
+    a { color: #336; text-decoration: underline; }
+    a:visited { color: #334; }
+    em { font-style: italic; }
+    strong { font-weight: bold; }
+    tt { color: navy; }
+
+    h1, h2, h3, h4, h5, h6 { color: #223; margin-top: 1.2em; margin-bottom: 0.5em; line-height: 1.3; }
+    h1 { border-bottom: 2px solid silver; }
+    h2 { border-bottom: 2px solid silver; padding-top: 0.5em; }
+
+    hr { color: #ccc; margin-top: 1.6em; }
+
+    p { color: #222; text-align: justify; margin-top: 0.5em; margin-bottom: 0.5em; line-height: 1.4em; }
+
+    pre { padding: 10; margin: 0; font-family: monospace; font-size: 0.9em; }
+    pre.pass { color: green; }
+    pre.fail { color: red; }
+    pre.error { color: red; font-weight: bold; }
+
+    span#author { color: #527bbd; font-weight: bold; font-size: 1.1em; }
+    span#email { }
+    span#revision { }
+
+    div#footer { font-size: small; border-top: 2px solid silver; padding-top: 0.5em; margin-top: 4.0em; }
+    div#footer-text { float: left; padding-bottom: 0.5em; }
+    div#footer-badges { float: right; padding-bottom: 0.5em; }
+
+    /* Block element content. */
+    div.content { padding: 0; }
+
+    /* Block element titles. */
+    h1.title { font-weight: bold; text-align: left; font-size: 3em; margin-top: 1.0em; margin-bottom: 0.5em; }
+
+    /* Block element titles. */
+    div.title, caption.title { font-weight: bold; text-align: left; margin-top: 1.0em; margin-bottom: 0.5em; }
+    div.title + * { margin-top: 0; }
+    td div.title:first-child { margin-top: 0.0em; }
+    div.content div.title:first-child { margin-top: 0.0em; }
+    div.content + div.title { margin-top: 0.0em; }
+    div.sidebarblock > div.content { background: #ffffee; border: 1px solid silver; padding: 0.5em; }
+
+    img { border-style: none; }
+
+    dl { margin-top: 0.8em; margin-bottom: 0.8em; }
+    dt { margin-top: 0.5em; margin-bottom: 0; font-style: italic; }
+    dd > *:first-child { margin-top: 0; }
+    ul, ol { list-style-position: outside; }
+
+    thead { font-weight: bold; }
+    tfoot { font-weight: bold; }
+  </style>
+
+  <!-- TODO: only include if these files exists -->
+  <link href="../assets/styles/spec.css" type="text/css" rel="stylesheet">
+  <!-- spec.css might be a problem with clobber -->
+  <link href="spec.css" type="text/css" rel="stylesheet">
+
+  
+
+  <!-- JQuery is needed -->
+  <script src="jquery.js" type="text/javascript" language="javascript"></script>
+
+</head>
+
+<body>
+
+  <!-- Side Table of Contents -->
+  <div id="sidebar" style="position: fixed; top: 10; right: 10; background: white;">
+    <a href="javascript: toc_toggle();">
+      <img src="img/icon/book.jpg" height="30px;" style="border: none;" alt="TOC" align="right"/>
+    </a>
+
+    <div id="toc_side" class="toc">
+    </div>
+  </div>
+
+  <div id="container">
+    <div id="header">
+      <img src="img/icon/book.jpg" align="left" style="padding-right: 10px;" alt=""/>
+
+      <h1 class="title">Demonstration</h1>
+
+      <h1>Table of Contents</h1>
+
+      <div class="toc">
+      </div>
+    </div>
+
+    <div id="content">
+      <body>
+<h1>Overloadable</h1>
+<p>
+The Overloadable mixin provides a means for overloading methods based in
+method signature using an elegant syntax. To demonstrate, we first need to
+load the library.
+</p>
+<pre>
+  require 'platypus/overload'
+</pre>
+<p>
+Now we can define a class that utilizes it.
+</p>
+<pre>
+  class X
+    include Overloadable
+
+    sig String, String
+
+    def x(str1, str2)
+      str1.assert.is_a?(String)
+      str2.assert.is_a?(String)
+    end
+
+    sig Integer, Integer
+
+    def x(int1, int2)
+      int1.assert.is_a?(Integer)
+      int2.assert.is_a?(Integer)
+    end
+  end
+</pre>
+<p>
+As you can see will placed assertions directly into our methods 
+definitions. We simply need to run an exmaple of each definition to see
+that it worked.
+</p>
+<pre>
+  x = X.new
+
+  x.x("Hello", "World")
+
+  x.x(100, 200)
+</pre>
+<p>
+But what happens if the signiture is not matched? Either an ArgumentError
+will be raised.
+</p>
+<pre>
+  expect ArgumentError do
+    x.x("Hello", 200)
+  end
+</pre>
+<p>
+Or it will fallback to a non-signiature definition, if one is defined.
+</p>
+<pre>
+  class X
+    def x(obj1, obj2)
+      obj1.refute.is_a?(Integer)
+      obj2.refute.is_a?(String)
+    end
+  end
+
+  x.x("Hello", 200)
+</pre>
+</body>
+<body>
+<h1>Types</h1>
+<p>
+Require the library.
+</p>
+<pre>
+  require 'platypus/type'
+</pre>
+<p>
+Now we can create types which are psuedo-classes.
+</p>
+<pre>
+  class KiloType &lt; Type
+    condition do |x|
+      x.case? Integer
+      x.kind_of?(Integer)
+      x.respond_to?(:succ)
+      x &gt; 1000
+    end
+  end
+
+  KiloType.assert === 2000
+  KiloType.refute === 999
+</pre>
+<p>
+Using the convenience #x method.
+</p>
+<pre>
+  class MegaType &lt; Type
+    x.case? Integer
+    x.kind_of?(Integer)
+    x.respond_to?(:succ)
+    x &gt; 1000000
+  end
+
+  MegaType.assert === 20000000
+  MegaType.refute === 999999
+</pre>
+</body>
+<body>
+<h1>Type Casting</h1>
+<p>
+Require the casting library.
+</p>
+<pre>
+  require 'platypus/typecast'
+</pre>
+<p>
+Define a couple of typecasts.
+</p>
+<pre>
+  class ::String
+    typecast ::Regexp do |string|
+      /#{string}/
+    end
+    typecast ::Regexp, :multiline do |string|
+      /#{string}/m
+    end
+  end
+
+  ::String.typecast ::Integer do |string|
+    Integer(string)
+  end
+</pre>
+<p>
+See that they work.
+</p>
+<pre>
+  ::Regexp.from("ABC").assert == /ABC/
+</pre>
+<p>
+And again.
+</p>
+<pre>
+  "123".to(::Integer).assert == 123
+</pre>
+</body>
+
+    </div>
+  </div>
+
+</body>
+
+</html>
+
+<script src="../assets/scripts/spec.js" type="text/javascript" language="javascript"></script>
+
+<script type="text/javascript" language="javascript">
+  /*****************************************************************
+   * $.toc()
+   * by rebecca murphey
+   * rmurphey gmail com
+   *
+   * This function is called on its own and takes as an argument
+   * a list of selectors with which it will build a table of
+   * contents. 
+   *
+   * The first selector will make up the top level of the TOC;
+   * the second selector will make up the second level of the TOC;
+   * etc.
+   *
+   * This function returns a div containing nested unordered lists;
+   * each list item is linked to an anchor tag added before the item
+   * on the page.
+   *
+   * usage: $.toc('h1,h2,h3').prependTo('body');
+   ************************************************************************/
+  (function($) { 
+    $.toc = function(tocList) {
+      $(tocList).addClass('jquery-toc');
+      var tocListArray = tocList.split(',');
+      $.each(tocListArray, function(i,v) { tocListArray[i] = $.trim(v); });
+      var $elements = $('.jquery-toc');
+      $('body').append('<div></div>');
+      var $toc = $('body div:last');
+      var lastLevel = 1;
+      $toc.append('<ul class="jquery-toc-1"></ul>');
+      $elements.each(function() {
+        var $e = $(this);
+        var text = $e.text();
+        var anchor = text.replace(/ /g,'-');
+        $e.before('<a name="' + anchor + '"></a>');
+        var level;
+        $.each(tocListArray, function(i,v) { 
+          if (v.match(' ')) {
+            var vArray = v.split(' '); 
+            var e = vArray[vArray.length - 1];
+          } else { e = v; }
+          if ($e.is(e)) { level = i+1; } 
+        });
+        var className = 'jquery-toc-' + level;
+        var li = '<li><a href="#' + anchor + '">' + text + '</a></li>';
+        if (level == lastLevel) {
+          $('ul.' + className + ':last',$toc).append(li);
+        } else if (level > lastLevel) {
+          var parentLevel = level - 1;
+          var parentClassName = 'jquery-toc-' + parentLevel;
+          $('ul.' + parentClassName + ':last',$toc).
+            append('<ul class="' + className + '"></ul>');
+          $('ul.' + className + ':last',$toc).append(li);
+        } else if (level < lastLevel) {
+          $('ul.' + className + ':last',$toc).append(li);
+        }
+        lastLevel = level;
+      });
+      var $toc_ul = $('ul.jquery-toc-1',$toc);
+      $toc.remove();
+      return($toc_ul);
+   }
+  })(jQuery);
+</script>
+
+<script>
+  function toc_toggle() {
+    $('#toc_side').toggle();
+    $("pre").addClass("pass");
+    $("pre:contains('FAIL:')").addClass("fail");
+    $("pre:contains('ERROR:')").addClass("error");
+  };
+
+  $.toc('#content h1,h2,h3,h4').appendTo('.toc');
+
+  toc_toggle();
+</script>
+
