@@ -71,7 +71,7 @@ Finally, the Platypus gives you the Type superclass (aka pseudo-classes).
   KiloType === 1000
   KiloType === 2000
 
-To learn more about using Platypus see the Demonstrundum{http://rubyworks.github.com/platypus/qedoc}.
+To learn more about using Platypus see the Demonstrundum[http://rubyworks.github.com/platypus/qedoc].
 
 
 == RELEASE NOTES
