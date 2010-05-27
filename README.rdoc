@@ -1,4 +1,4 @@
-= TypeCast
+= Platypus
      _   ___
     / \ /   \
     \. |: cc|
@@ -8,21 +8,14 @@
       \ _ /
        m m
 
-* http://rubyworks.github.com/typecast
-* http://github.com/rubyworks/typecast
+* home: http://rubyworks.github.com/typecast
+* work: http://github.com/rubyworks/typecast
 
 
 == DESCRIPTION
 
-Provides a generalize type conversion system, and overload system
-and a typeface. Overload methods using type specific signitures.
-
-
-== FEATURES
-
-* Double-dispatch type conversion.
-* Elegant method overloading.
-* Custom type interfaces.
+Platypus provides a generalized type conversion system,
+method overloading and psuedo-classes.
 
 
 == RELEASE NOTES
@@ -32,11 +25,11 @@ Please see HISTORY file.
 
 == SYNOPSIS
 
-=== Type Conversions
+=== Type Conversion
 
-   "1234".cast_to Float     => 1234.0  (Float)
+   "1234".to(Float)    => 1234.0  (Float)
 
-   Time.cast_from("6:30")   => 1234.0  (Time)
+   Time.from("6:30")   => 1234.0  (Time)
 
 === Method Overloading
 
@@ -50,32 +43,41 @@ new functionality based on a specified type interface.
        "hello"
      end
 
-     type Integer
+     sig Integer
 
      def x(i)
        i
      end
 
-     type String, String
+     sig String, String
 
      def x(s1, s2)
        [s1, s2]
      end
    end
 
+=== Psuedo-Classes
+
+  class KiloType < Type
+    x % 1000 == 0
+  end
+
+  KiloType === 1000
+  KiloType === 2000
+
 
 == INSTALLATION
 
 To install with RubyGems simply open a console and type:
 
-  gem install typecast
+  $ gem install typecast
 
-Local installation requires Setup.rb (gem install setup),
+Site installation can be achieved with Setup.rb (gem install setup),
 then download the tarball package and type:
 
-  tar -xvzf typecast-1.0.0.tgz
-  cd typecast-1.0.0
-  sudo setup.rb all
+  $ tar -xvzf typecast-1.0.0.tgz
+  $ cd typecast-1.0.0
+  $ sudo setup.rb all
 
 Windows users use 'ruby setup.rb all'.
 
@@ -83,7 +85,6 @@ Windows users use 'ruby setup.rb all'.
 == COPYING
 
 Copyright (c) 2010 Thomas Sawyer
-Copyright (c) 2004 Jonas Pfenniger
 
 This program is ditributed unser the terms of the Ruby license.
 

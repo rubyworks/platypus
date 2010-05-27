@@ -1,7 +1,7 @@
 --- 
-title  : Typecast
+title  : Platypus
 suite  : rubyworks 
-summary: Double-dispatch Type Conversion System
+summary: Type Casting System
 license: MIT
 created: 2004-01-01
 
@@ -9,15 +9,16 @@ copyright:
   Copyright (c) 2004 Thomas Sawyer
 
 authors:
-  - Jonas Pfenniger
   - Thomas Sawyer
+  - Jonas Pfenniger
 
 description:
-  Provides a complete double-dispatch type conversion system.
-  All the ruby core conversions are available by default.
+  Provides a complete double-dispatch type conversion system,
+  method overloadability and psuedo-classes.
 
 resources:
-  homepage: http://rubyworks.github.com/typecast
+  homepage: http://rubyworks.github.com/platypus
+  development: http://github.com/rubyworks/platypus
+  repository: http://rubyworks.github.com/platypus.git
   forum: http://googlegroups/group/rubyworks-mailinglist
-
 

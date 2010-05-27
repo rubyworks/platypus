@@ -1,5 +1,5 @@
-#
-#
+# The Obverloadable mixin allows you to easily
+# overload methods based on method signitures.
 #
 module Overloadable
 
@@ -12,25 +12,32 @@ module Overloadable
     end
   end
 
-  #
+  # Setup an overload state.
   def overload(*signature)
     (@overload_stack ||= []) << signature
   end
+
+  # Short alias for +overload+.
+  alias_method :sig, :overload
 
   #
   def method_added(name)
     return if $skip
 
-    unless method_defined?("#{name}:origin")
-      $skip = true
-      alias_method("#{name}:origin", name)
-      $skip = false
-    end
-
     @overload_stack  ||= []
     @overload_method ||= {}
 
     signature = @overload_stack.pop
+
+    if !method_defined?("#{name}:origin")
+      $skip = true
+      if signature
+        define_method("#{name}:origin"){|*a| raise ArgumentError }
+      else
+        alias_method("#{name}:origin", name)
+      end
+      $skip = false
+    end
 
     if signature
       @overload_module ||= Module.new
@@ -89,4 +96,3 @@ module Overloadable
   end
 
 end
-

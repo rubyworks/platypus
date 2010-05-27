@@ -5,8 +5,5 @@ isn't a better approach.
 
 Otherwise, just clean up the current code --main issue is the use of xGeneric aliases.
 
-* Consider how this might fit in with method signitures, overloading,
-and expiremental euphoria-like type system.
-
 * Look to implement to_int, to_mailtext, to_r, to_rfc822text and to_str.
 

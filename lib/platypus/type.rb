@@ -1,8 +1,8 @@
-require 'typecast/kernel'
+require 'platypus/core_ext'
 
 # Base class for Euphoria-like Types.
 #
-#   class KiloType < TypeCast
+#   class KiloType < Type
 #     condition do |x|
 #       x.case? Integer
 #       x.kind_of?(Integer)
@@ -15,7 +15,7 @@ require 'typecast/kernel'
 # special "magic-dot" method to make defining these
 # conditions more concise.
 #
-#   class KiloType < TypeCast
+#   class KiloType < Type
 #     x.case? Integer
 #     x.kind_of?(Integer)
 #     x.respond_to?(:succ)
@@ -46,7 +46,7 @@ require 'typecast/kernel'
 #
 # This will define a method equivalent to the prior example.
 
-class TypeCast
+class Type
 
   # Activeate/Deactivate type-checking globally (NOT USED YET).
   def self.check(on_or_off=nil)
@@ -116,7 +116,7 @@ class TypeCast
     indexes.max || 0
   end
 
-  def conditions
+  def self.conditions
     #x.__conditions__ + (@conditions || []) + (defined?(super) ? super : [])
     instance_methods.select{ |m| m.to_s =~ /^condition_/ }
   end
@@ -148,20 +148,6 @@ class TypeCast
   #def valid?(obj)
   #  @validate[obj] if @validate
   #end
-
-end
-
-
-if __FILE__ == $0
-
-  class MyType < TypeCast
-    x.case? Integer
-    x.kind_of?(Integer)
-    x.respond_to?(:succ)
-    x < 1000
-  end
-
-  p MyType === 4
 
 end
 

@@ -51,6 +51,37 @@
 
 require 'facets/string/methodize'
 require 'facets/string/camelcase' #modulize'
+require 'set'
+
+class Class
+
+  def typecasts
+    @typecasts ||= {}
+  end
+
+  def typecast(target_class, specifics=nil)
+    if specifics
+      typecasts[target_class] ||= {}
+      typecasts[target_class][Set.new(*specifics)] = self
+    else
+      typecasts[target_class][nil] = self
+    end
+  end
+
+  def from(source_class, specifics={})
+    if cast = source_class.typecasts[self]
+      if spec = cast[Set.new(*specifics.keys)]
+        spec.call(specifics)
+      else
+        cast[nil].call(specifics)
+      end
+    else
+      raise TypeError
+    end
+  end
+
+end
+
 
 class Object #:nodoc:
   # Cast an object to another
@@ -78,7 +109,7 @@ class Class #:nodoc:
       retval = send(method_from, object)
       return retval
     end
-    raise TypeError, "TypeCasting from #{object.class.name} to #{self.name} not supported"
+    raise TypeError, "Type casting from #{object.class.name} to #{self.name} not supported"
   end
 
   # "string".cast_to Class         #=> String
