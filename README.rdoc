@@ -8,8 +8,8 @@
       \ _ /
        m m
 
-* home: http://rubyworks.github.com/typecast
-* work: http://github.com/rubyworks/typecast
+* home: http://rubyworks.github.com/platypus
+* work: http://github.com/rubyworks/platypus
 
 
 == DESCRIPTION

@@ -1,5 +1,4 @@
 require 'platypus/overload'
-require 'test/unit'
 
 #
 class TC_Overload_01 < Test::Unit::TestCase
@@ -43,7 +42,6 @@ class TC_Overload_01 < Test::Unit::TestCase
 end
 
 #
-#
 class TC_Overload_02 < Test::Unit::TestCase
 
   class X
@@ -85,7 +83,6 @@ class TC_Overload_02 < Test::Unit::TestCase
 
 end
 
-#
 #
 class TC_Overload_03 < Test::Unit::TestCase
 

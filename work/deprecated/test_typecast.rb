@@ -1,4 +1,4 @@
-require 'platypus/typecast'
+require 'typecast/cast'
 require 'test/unit'
 
 class TC_TypeCast < Test::Unit::TestCase

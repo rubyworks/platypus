@@ -1,6 +1,6 @@
 = Overloadable
 
-The OVerloadable mixin provides a means for overloading
+The Overloadable mixin provides a means for overloading
 methods based in method signature using an elegant syntax.
 To demonstrate, we first need to load the library.
 
