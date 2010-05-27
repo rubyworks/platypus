@@ -46,7 +46,7 @@
       <h3 class="section-header">File Stats</h3>
       <dl>
         <dt class="modified-date">Last Modified</dt>
-        <dd class="modified-date">Thu May 27 12:55:13 -0400 2010</dd>
+        <dd class="modified-date">Thu May 27 16:45:59 -0400 2010</dd>
 
         
 
@@ -303,44 +303,62 @@ href="http://github.com/rubyworks/platypus">github.com/rubyworks/platypus</a>
 Platypus provides a generalized type conversion system, method overloading
 and psuedo-classes.
 </p>
-<h2>RELEASE NOTES</h2>
-<p>
-Please see <a href="HISTORY.html">HISTORY</a> file.
-</p>
 <h2>SYNOPSIS</h2>
-<h3><a href="Type.html">Type</a> Conversion</h3>
+<p>
+<a href="Type.html">Type</a> conversion work like a rational duck might
+expect.
+</p>
 <pre>
    &quot;1234&quot;.to(Float)    =&gt; 1234.0  (Float)
 
    Time.from(&quot;6:30&quot;)   =&gt; 1234.0  (Time)
 </pre>
-<h3>Method Overloading</h3>
 <p>
-To overload a method use the # method to define new functionality based on
-a specified type interface.
+You can of course define your own.
+</p>
+<pre>
+  class X
+    typecast String do |x|
+      &quot;#{x}&quot;
+    end
+  end
+</pre>
+<p>
+To overload a method, mixin the <a
+href="Overloadable.html">Overloadable</a> module and use the # (or #)
+method to define new functionality based on a specified type interface.
 </p>
 <pre>
    class X
      include Overloadable
 
-     def x
-       &quot;hello&quot;
+     def f
+       &quot;f&quot;
      end
 
      sig Integer
 
-     def x(i)
-       i
+     def f(i)
+       &quot;f#{i}&quot;
      end
 
      sig String, String
 
-     def x(s1, s2)
-       [s1, s2]
+     def f(s1, s2)
+       [s1, s2].join('+')
      end
    end
+
+   x = X.new
+
+   x.f          #=&gt; &quot;f&quot;
+   x.f(1)       #=&gt; &quot;f1&quot;
+   x.f(&quot;A&quot;,&quot;B&quot;) #=&gt; &quot;A+B&quot;
 </pre>
-<h3>Psuedo-Classes</h3>
+<p>
+Finally, the Platypus gives you the <a href="Type.html">Type</a> superclass
+(aka pseudo-classes).
+</p>
 <pre>
   class KiloType &lt; Type
     x % 1000 == 0
@@ -349,6 +367,14 @@ a specified type interface.
   KiloType === 1000
   KiloType === 2000
 </pre>
+<p>
+To learn more about using Platypus see the Demonstrundum{<a
+href="http://rubyworks.github.com/platypus/qedoc">rubyworks.github.com/platypus/qedoc</a>}.
+</p>
+<h2>RELEASE NOTES</h2>
+<p>
+Please see <a href="HISTORY.html">HISTORY</a> file.
+</p>
 <h2>INSTALLATION</h2>
 <p>
 To install with RubyGems simply open a console and type:
@@ -373,10 +399,10 @@ Windows users use &#8216;ruby setup.rb all&#8217;.
 Copyright &#169; 2010 Thomas Sawyer
 </p>
 <p>
-This program is ditributed unser the terms of the Ruby license.
+This program is ditributed unser the terms of the MIT license.
 </p>
 <p>
-See <a href="LICENSE.html">LICENSE</a> or COPYING file for details.
+See <a href="LICENSE.html">LICENSE</a> file for details.
 </p>
 <p>
 #&#8212; <b>-</b> mode: rdoc <b>-</b>
