@@ -5,11 +5,9 @@ lib/platypus/type.rb
 lib/platypus/typecast.rb
 lib/platypus.rb
 test/test_overload.rb
-test/test_typecast.rb
 PROFILE
-TODO
 LICENSE
-README.rdoc
+README
 HISTORY
 NOTES.rdoc
 VERSION
