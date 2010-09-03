@@ -1,14 +1,14 @@
-#!mast -x Syckfile bin lib meta test [A-Z]*
+#!mast -x Syckfile .ruby bin lib meta test [A-Z]*
+.ruby
 lib/platypus/core_ext.rb
 lib/platypus/overload.rb
 lib/platypus/type.rb
 lib/platypus/typecast.rb
 lib/platypus.rb
+meta/package
+meta/profile
 test/test_overload.rb
-PROFILE
 LICENSE
-README
+README.rdoc
 HISTORY
 NOTES.rdoc
-REQUIRE
-VERSION
