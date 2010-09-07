@@ -6,25 +6,26 @@
   <style>
     body { font: 12pt sans-serif; padding: 0; margin: 0; color: #555; font-weight: bold; }
     pre { color: green; font-family: monospace; }
-    a { color: #77aaff; }
+    a { color: #77aaff; font-family: sans-serif; text-decoration: none; }
     #container { margin: 0 auto; width: 720px; position: relative; }
-    #title { color: #dddddd; border-bottom: 0px solid #ccc; padding: 20px 5px; margin-bottom: 5px; }
-    #nav { text-align: center; }
-    #nav a { color: #444; text-decoration: none; padding: 3px; }
+    #title { color: #dddddd; border-bottom: 0px solid #ccc; padding: 20px 5px 10px 5px; margin-bottom: 5px; }
+    #nav { text-align: left; margin-left: 10px; }
+    #nav a { text-decoration: none; padding: 3px; font-size: 10pt; }
     #nav a:hover { background: black; color: white; }
     #project { font: 16pt sans-serif; color: black; padding: 0 5px; letter-spacing: 4px; }
     #package { font: bold 46pt sans-serif; color: #ee9999; }
-    #corpus { padding: 20px 20px 20px 20px; font-family: times; font-size: 1.2em; }
+    #corpus { padding: 20px 20px 20px 10px; font-family: times; font-size: 1.2em; }
     #ad { text-align: center; padding: 20px 20px; border-top: 1px solid #ccc; clear: both; }
     #quote { text-align: center; padding: 20px 20px; border-top: 1px solid #ccc; clear: both; }
     #copy { border-top: 1px solid #ccc; font-size: 70%; padding: 20px; text-align: center; }
+    #copy p { text-align: left; }
   </style>
 </head>
 
 <body>
 <div id="container">
 
-  <img src="assets/whyduck.jpg" align="right" style="height: 450px; margin: 0 40px -140px 0;" />
+  <img src="assets/whyduck.jpg" align="right" style="height: 450px; margin: 0 40px -190px 0;" />
 
   <div id="title" style="clear: both;">
     <div id="project">Rubyworks</div>
@@ -32,8 +33,8 @@
   </div>
 
   <div id="nav">
-    <a href="http://wiki.github.com/rubyworks/platypus">Wiki</a> &middot;
     <a href="docs/qed/index.html">QED</a> &middot;
+    <a href="http://wiki.github.com/rubyworks/platypus">Wiki</a> &middot;
     <a href="docs/api/index.html">API</a> &middot;
     <a href="http://github.com/rubyworks/platpus/issues">Issue</a> &middot;
     <a href="http://github.com/rubyworks/platpus">Code</a>
@@ -46,17 +47,13 @@
 
     <p>For more information see:
       <ul>
-        <li><a href="docs/api/index.html">API Reference Guide</a></li>
         <li><a href="docs/qed/index.html">QED Demonstrandum</a></li>
         <li><a href="http://wiki.github.com/rubyworks/platypus">Wiki-Wiki on GitHub</a></li>
+        <li><a href="docs/api/index.html">API Reference Guide</a></li>
       </ul>
     </p>
 
     <br/>
-
-    <p>"<i>If it looks like a duck, and quacks like a duck, we have at least to consider
-    the possibility that we have a small aquatic bird of the family anatidae on our hands.</i>"
-    --Douglas Adams</p>
   </div>
 
   <div style="position: absolute; top: 9px; right: 0; font-size: 8px; text-align: right;">
@@ -83,6 +80,12 @@
 </div>
 
 <div id="copy">
+  <div style="margin: 0 auto; width: 700px; font-size: 10pt;">
+    <p>"<i>If it looks like a duck, and quacks like a duck, we have at least to consider
+    the possibility that we have a small aquatic bird of the family anatidae on our hands.</i>"</p>
+    <p style="text-align: right;">--Douglas Adams</p>
+  </div>
+  <br/><br/>
   Copyright &copy; 2010 Thomas Sawyer &middot; Image of "Horse on Duck" by WhyTheLuckyStiff (<i>God Speed, Eigenman)</i>.
 </div>
 
