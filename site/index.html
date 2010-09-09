@@ -4,21 +4,25 @@
   <title>Platypus</title>
   <link REL="SHORTCUT ICON" HREF="assets/ruby.png">
   <style>
-    body { font: 12pt sans-serif; padding: 0; margin: 0; color: #555; font-weight: bold; }
+    body { font-size: 16px; font-family: sans-serif; padding: 0; margin: 0; color: #555; }
     pre { color: green; font-family: monospace; }
     a { color: #77aaff; font-family: sans-serif; text-decoration: none; }
+    p { text-align: justify; }
+    code { font-size: 0.8em; }
     #container { margin: 0 auto; width: 720px; position: relative; }
     #title { color: #dddddd; border-bottom: 0px solid #ccc; padding: 20px 5px 10px 5px; margin-bottom: 5px; }
     #nav { text-align: left; margin-left: 10px; }
-    #nav a { text-decoration: none; padding: 3px; font-size: 10pt; }
+    #nav a { text-decoration: none; padding: 3px; font-size: 10pt; font-weight: bold;}
     #nav a:hover { background: black; color: white; }
     #project { font: 16pt sans-serif; color: black; padding: 0 5px; letter-spacing: 4px; }
     #package { font: bold 46pt sans-serif; color: #ee9999; }
-    #corpus { padding: 20px 20px 20px 10px; font-family: times; font-size: 1.2em; }
+    #corpus { padding: 20px 20px 20px 10px; font-family: helvetica; font-size: 1em; color: #333; line-height: 1.5em;}
     #ad { text-align: center; padding: 20px 20px; border-top: 1px solid #ccc; clear: both; }
     #quote { text-align: center; padding: 20px 20px; border-top: 1px solid #ccc; clear: both; }
     #copy { border-top: 1px solid #ccc; font-size: 70%; padding: 20px; text-align: center; }
     #copy p { text-align: left; }
+    #menu { margin-left: 30px; float: right; width: 300px; }
+    .bold { font-weight: bold; }
   </style>
 </head>
 
@@ -34,24 +38,40 @@
 
   <div id="nav">
     <a href="docs/qed/index.html">QED</a> &middot;
-    <a href="http://wiki.github.com/rubyworks/platypus">Wiki</a> &middot;
+    <!-- <a href="http://wiki.github.com/rubyworks/platypus">Wiki</a> &middot; -->
     <a href="docs/api/index.html">API</a> &middot;
-    <a href="http://github.com/rubyworks/platpus/issues">Issue</a> &middot;
-    <a href="http://github.com/rubyworks/platpus">Code</a>
+    <a href="http://github.com/rubyworks/platpus">Code</a> &middot;
+    <a href="http://github.com/rubyworks/platpus/issues">Issue?</a>
   </div>
 
   <div id="corpus">
-    <p>Platypus is a small inter-related collection of type-oriented libraries for Ruby.
-    Among it's quacking talents is a type casting system, a pseudo-superclass and a
-    method overloading mixin.</p>
+    <p class="bold">Platypus is a small inter-related collection of type-oriented libraries for Ruby.
+    Among it's quacking talents is a <i>type casting system</i>, a <i>pseudo-type superclass</i> and a
+    <i>method overloading mixin</i>.</p>
 
-    <p>For more information see:
+    <div id="menu">
+      For more information see:
       <ul>
         <li><a href="docs/qed/index.html">QED Demonstrandum</a></li>
-        <li><a href="http://wiki.github.com/rubyworks/platypus">Wiki-Wiki on GitHub</a></li>
         <li><a href="docs/api/index.html">API Reference Guide</a></li>
+        <li><a href="http://github.com/rubyworks/platypus">Sourec Code on GitHub</a></li>
       </ul>
     </p>
+    </div>
+
+    <h2>Why?</h2>
+
+    <p>Platypus is a playful project. Its three libraries all address considerations
+    common to those new to Ruby. Almost like clockwork, a Ruby nuby
+    is bound to ask about method overloading, or how to encapsulate complex type
+    checks, or why type conversion isn't generalized. And I do say, it is not without fair
+    reason. They are convenient constructs. But, without support in Ruby proper,
+    they are really little more than novelities. Sure you can use an add-on library
+    like <code>platypus/overload.rb</code> to good effect. But in the end,
+    it does little more than save your finguers a few key-strokes. Nonetheless,
+    if you are set on such things, or would just like to learn how such features
+    might be implemented, then the Platypus is here for the riding, with mature
+    implementations that have evloved over the years.</p>
 
     <br/>
   </div>
