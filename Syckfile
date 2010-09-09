@@ -34,6 +34,12 @@ rdoc:
   output  : site/docs/api
   active  : true
 
+qedoc:
+  service : Custom
+  cycle   : main
+  document: |
+    system 'qedoc -o site/docs/qed -t "Platypus Overview" qed'
+
 syntax:
   service  : Syntax
   loadpath : ~
