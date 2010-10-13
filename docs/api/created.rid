@@ -1,9 +1,9 @@
-Thu, 09 Sep 2010 15:41:59 -0400
+Wed, 13 Oct 2010 00:35:26 -0400
 HISTORY	Tue, 07 Sep 2010 12:00:43 -0400
 LICENSE	Thu, 27 May 2010 11:56:24 -0400
 lib/platypus/typecast.rb	Thu, 27 May 2010 11:54:21 -0400
 lib/platypus/overload.rb	Thu, 27 May 2010 10:53:56 -0400
-README.rdoc	Thu, 27 May 2010 17:49:46 -0400
+README.rdoc	Mon, 13 Sep 2010 19:39:12 -0400
 lib/platypus/type.rb	Thu, 27 May 2010 09:59:58 -0400
 lib/platypus.rb	Thu, 27 May 2010 09:55:03 -0400
 lib/platypus/core_ext.rb	Thu, 27 May 2010 10:56:09 -0400
