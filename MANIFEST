@@ -1,4 +1,4 @@
-#!mast -x Syckfile .ruby bin lib test [A-Z]*
+#!mast -x Syckfile -x PROFILE .ruby bin lib man spec test [A-Z]*
 .ruby
 lib/platypus/core_ext.rb
 lib/platypus/overload.rb
@@ -7,7 +7,6 @@ lib/platypus/typecast.rb
 lib/platypus/version.rb
 lib/platypus.rb
 test/test_overload.rb
-PROFILE
 LICENSE
 README.rdoc
 HISTORY

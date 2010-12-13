@@ -1,24 +1,29 @@
 --- 
 title  : Platypus
-suite  : rubyworks 
 summary: Type Casting System
 license: MIT
 created: 2004-01-01
 
-copyright:
-  Copyright (c) 2004 Thomas Sawyer
-
-authors:
-  - Thomas Sawyer
-  - Jonas Pfenniger
+requires:
+- syckle (build)
+- qed (test)
 
 description:
   Provides a complete double-dispatch type conversion system,
   method overloadability and psuedo-classes.
 
 resources:
-  homepage: http://rubyworks.github.com/platypus
-  development: http://github.com/rubyworks/platypus
-  repository: http://rubyworks.github.com/platypus.git
-  forum: http://googlegroups/group/rubyworks-mailinglist
+  home: http://rubyworks.github.com/platypus
+  code: http://github.com/rubyworks/platypus
+  mail: http://googlegroups/group/rubyworks-mailinglist
+
+repositories:
+  public: http://rubyworks.github.com/platypus.git
+
+authors:
+  - Thomas Sawyer
+  - Jonas Pfenniger
+
+organization: RubyWorks
+copyright   : Copyright (c) 2004 Thomas Sawyer
 
