@@ -140,146 +140,125 @@
     </div>
 
     <div id="content">
-      <h1>Type Casting</h1>
-<p>
-Require the casting library.
-</p>
-<pre>
-  require 'platypus/typecast'
-</pre>
-<p>
-Define a couple of typecasts.
-</p>
-<pre>
-  class ::String
-    typecast ::Regexp do |string|
-      /#{string}/
-    end
-    typecast ::Regexp, :multiline do |string|
-      /#{string}/m
-    end
-  end
+      
+<h1>Type Casting</h1>
 
-  ::String.typecast ::Integer do |string|
-    Integer(string)
+<p>Require the casting library.</p>
+
+<pre>require 'platypus/typecast'</pre>
+
+<p>Define a couple of typecasts.</p>
+
+<pre>class ::String
+  typecast ::Regexp do |string|
+    /#{string}/
   end
-</pre>
-<p>
-See that they work.
-</p>
-<pre>
-  ::Regexp.from(&quot;ABC&quot;).assert == /ABC/
-</pre>
-<p>
-And again.
-</p>
-<pre>
-  &quot;123&quot;.to(::Integer).assert == 123
-</pre>
+  typecast ::Regexp, :multiline do |string|
+    /#{string}/m
+  end
+end
+
+::String.typecast ::Integer do |string|
+  Integer(string)
+end</pre>
+
+<p>See that they work.</p>
+
+<pre>::Regexp.from(&quot;ABC&quot;).assert == /ABC/</pre>
+
+<p>And again.</p>
+
+<pre>&quot;123&quot;.to(::Integer).assert == 123</pre>
+
 
 <h1>Pseudo-Types</h1>
-<p>
-Require the library.
-</p>
-<pre>
-  require 'platypus/type'
-</pre>
-<p>
-Now we can create types which are psuedo-classes.
-</p>
-<pre>
-  class KiloType &lt; Type
-    condition do |x|
-      x.case? Integer
-      x.kind_of?(Integer)
-      x.respond_to?(:succ)
-      x &gt; 1000
-    end
-  end
 
-  KiloType.assert === 2000
-  KiloType.refute === 999
-</pre>
-<p>
-Using the convenience #x method.
-</p>
-<pre>
-  class MegaType &lt; Type
+<p>Require the library.</p>
+
+<pre>require 'platypus/type'</pre>
+
+<p>Now we can create types which are psuedo-classes.</p>
+
+<pre>class KiloType &lt; Type
+  condition do |x|
     x.case? Integer
     x.kind_of?(Integer)
     x.respond_to?(:succ)
-    x &gt; 1000000
+    x &gt; 1000
   end
+end
 
-  MegaType.assert === 20000000
-  MegaType.refute === 999999
-</pre>
+KiloType.assert === 2000
+KiloType.refute === 999</pre>
+
+<p>Using the convenience #x method.</p>
+
+<pre>class MegaType &lt; Type
+  x.case? Integer
+  x.kind_of?(Integer)
+  x.respond_to?(:succ)
+  x &gt; 1000000
+end
+
+MegaType.assert === 20000000
+MegaType.refute === 999999</pre>
+
 
 <h1>Overloadable</h1>
-<p>
-The Overloadable mixin provides a means for overloading methods based in
+
+<p>The Overloadable mixin provides a means for overloading methods based in
 method signature using an elegant syntax. To demonstrate, we first need to
-load the library.
-</p>
-<pre>
-  require 'platypus/overload'
-</pre>
-<p>
-Now we can define a class that utilizes it.
-</p>
-<pre>
-  class X
-    include Overloadable
+load the library.</p>
 
-    sig String, String
+<pre>require 'platypus/overload'</pre>
 
-    def x(str1, str2)
-      str1.assert.is_a?(String)
-      str2.assert.is_a?(String)
-    end
+<p>Now we can define a class that utilizes it.</p>
 
-    sig Integer, Integer
+<pre>class X
+  include Overloadable
 
-    def x(int1, int2)
-      int1.assert.is_a?(Integer)
-      int2.assert.is_a?(Integer)
-    end
+  sig String, String
+
+  def x(str1, str2)
+    str1.assert.is_a?(String)
+    str2.assert.is_a?(String)
   end
-</pre>
-<p>
-As you can see will placed assertions directly into our methods 
+
+  sig Integer, Integer
+
+  def x(int1, int2)
+    int1.assert.is_a?(Integer)
+    int2.assert.is_a?(Integer)
+  end
+end</pre>
+
+<p>As you can see will placed assertions directly into our methods 
 definitions. We simply need to run an exmaple of each definition to see
-that it worked.
-</p>
-<pre>
-  x = X.new
+that it worked.</p>
 
-  x.x(&quot;Hello&quot;, &quot;World&quot;)
+<pre>x = X.new
 
-  x.x(100, 200)
-</pre>
-<p>
-But what happens if the signiture is not matched? Either an ArgumentError
-will be raised.
-</p>
-<pre>
-  expect ArgumentError do
-    x.x(&quot;Hello&quot;, 200)
-  end
-</pre>
-<p>
-Or it will fallback to a non-signiature definition, if one is defined.
-</p>
-<pre>
-  class X
-    def x(obj1, obj2)
-      obj1.refute.is_a?(Integer)
-      obj2.refute.is_a?(String)
-    end
-  end
+x.x(&quot;Hello&quot;, &quot;World&quot;)
 
+x.x(100, 200)</pre>
+
+<p>But what happens if the signiture is not matched? Either an ArgumentError
+will be raised.</p>
+
+<pre>expect ArgumentError do
   x.x(&quot;Hello&quot;, 200)
-</pre>
+end</pre>
+
+<p>Or it will fallback to a non-signiature definition, if one is defined.</p>
+
+<pre>class X
+  def x(obj1, obj2)
+    obj1.refute.is_a?(Integer)
+    obj2.refute.is_a?(String)
+  end
+end
+
+x.x(&quot;Hello&quot;, 200)</pre>
 
 
     </div>
