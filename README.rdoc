@@ -83,14 +83,14 @@ Please see HISTORY file.
 
 To install with RubyGems simply open a console and type:
 
-  $ gem install typecast
+  $ gem install platypus
 
 Site installation can be achieved with Setup.rb (gem install setup),
 then download the tarball package and type:
 
-  $ tar -xvzf typecast-1.0.0.tgz
-  $ cd typecast-1.0.0
-  $ sudo setup.rb all
+  $ tar -xvzf platypus-1.0.0.tgz
+  $ cd platypus-1.0.0
+  $ setup.rb all
 
 Windows users use 'ruby setup.rb all'.
 
@@ -99,9 +99,10 @@ Windows users use 'ruby setup.rb all'.
 
 Copyright (c) 2010 Thomas Sawyer
 
-This program is ditributed unser the terms of the Apache 2.0 license.
+This program is ditributed unser the terms of the *FreeBSD* license.
 
-See LICENSE file for details.
+See COPYING.rdoc file for details.
 
-#--
+
 *-* mode: rdoc *-*
+

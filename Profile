@@ -1,11 +1,13 @@
 --- 
+version: 1.0.1
+name: platypus
+
 title  : Platypus
-summary: Type Casting System
-license: MIT
+summary: Riding on Types with Ruby
 created: 2004-01-01
 
-requires:
-- syckle (build)
+requirements:
+- detroit (build)
 - qed (test)
 
 description:
@@ -18,12 +20,14 @@ resources:
   mail: http://googlegroups/group/rubyworks-mailinglist
 
 repositories:
-  public: http://rubyworks.github.com/platypus.git
+  upstream: http://rubyworks.github.com/platypus.git
 
 authors:
   - Thomas Sawyer
   - Jonas Pfenniger
 
 organization: RubyWorks
-copyright   : Copyright (c) 2004 Thomas Sawyer
+
+copyrights:
+  - Copyright (c) 2004 Thomas Sawyer (BSD-2-Clause)
 

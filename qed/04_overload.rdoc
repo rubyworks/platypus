@@ -1,4 +1,4 @@
-= Overloadable
+== Overloadable
 
 The Overloadable mixin provides a means for overloading
 methods based in method signature using an elegant syntax.

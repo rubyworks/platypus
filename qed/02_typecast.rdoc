@@ -1,4 +1,4 @@
-= Type Casting
+== Type Casting
 
 Require the casting library.
 

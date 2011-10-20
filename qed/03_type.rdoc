@@ -1,4 +1,4 @@
-= Pseudo-Types
+== Pseudo-Types
 
 Require the library.
 

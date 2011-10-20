@@ -1,0 +1,46 @@
+---
+github:
+  active: true
+
+gem:
+  active : true
+
+dnote:
+  service  : DNote
+  labels   : ~
+  output   : log/NOTES.rdoc
+
+locat:
+  active   : false
+
+email:
+  service : Email
+  file    : ~
+  subject : ~
+  mailto  : 
+    - ruby-talk@ruby-lang.org
+    - rubyworks-mailinglist@googlegroups.com
+
+vclog:
+  output: log/HISTORY.rdoc
+
+qedoc:
+  title: Platypus Overview
+  files: qed/
+  output: SPEC.rdoc
+
+#ridoc:
+#  service: RIDoc
+#  include: ~
+#  exclude: ~
+#  output : .rdoc
+#  active : true
+
+#rdoc:
+#  service : RDoc
+#  format  : redfish
+#  include : ~
+#  exclude : [Syckfile]
+#  output  : site/docs/api
+#  active  : true
+
