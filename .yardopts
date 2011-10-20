@@ -1,0 +1,5 @@
+--private
+--readme README.rdoc
+lib
+-
+[A-Z]*.*

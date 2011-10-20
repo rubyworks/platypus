@@ -24,7 +24,7 @@ require 'platypus/core_ext'
 #
 # While TypeCasts are not actual types in the sense they
 # are not actual classes. They can be used for conversion
-# by defining a "from_{class}" class method. In doing so
+# by defining a "from_<class>" class method. In doing so
 # you should make sure the result of the conversion conforms
 # to the typecast. You can use the TypeCast.validate method
 # to make that a bit easier. For instance:

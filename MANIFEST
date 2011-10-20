@@ -1,5 +1,6 @@
-#!mast .ruby bin lib man qed spec test [A-Z]*.*
+#!mast .ruby .yardopts bin lib man qed spec test [A-Z]*.*
 .ruby
+.yardopts
 lib/platypus/core_ext.rb
 lib/platypus/overload.rb
 lib/platypus/type.rb
@@ -12,6 +13,7 @@ qed/03_type.rdoc
 qed/04_overload.rdoc
 test/test_overload.rb
 HISTORY.rdoc
+SPEC.rdoc
 README.rdoc
 NOTES.rdoc
-QED.rdoc
+COPYING.rdoc
