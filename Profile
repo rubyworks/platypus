@@ -23,7 +23,7 @@ repositories:
   upstream: http://rubyworks.github.com/platypus.git
 
 authors:
-  - Thomas Sawyer
+  - Thomas Sawyer <transfire@gmail.com>
   - Jonas Pfenniger
 
 organization: RubyWorks
