@@ -1,5 +1,13 @@
 = Release History
 
+== 1.0.2 / 2011-10-22
+
+This release fixes a bug that preventd Kernel#case? from being defined.
+
+Changes:
+
+* Remove Kernel#case? def condition [bug].
+
 
 == 1.0.1 / 2011-10-19
 
