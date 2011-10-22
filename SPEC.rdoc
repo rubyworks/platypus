@@ -60,8 +60,9 @@ Using the convenience #x method.
     x > 1000000
   end
 
-  MegaType.assert === 20000000
   MegaType.refute === 999999
+  MegaType.assert === 20000000
+
 
 
 == Overloadable
