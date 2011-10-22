@@ -10,6 +10,14 @@ dnote:
   labels   : ~
   output   : log/NOTES.rdoc
 
+qed:
+  files: spec/*.rdoc
+
+qedoc:
+  title: Platypus Overview
+  files: spec/
+  output: SPEC.rdoc
+
 locat:
   active   : false
 
@@ -22,11 +30,6 @@ email:
 
 vclog:
   output: log/HISTORY.rdoc
-
-qedoc:
-  title: Platypus Overview
-  files: qed/
-  output: SPEC.rdoc
 
 #ridoc:
 #  service: RIDoc
