@@ -1,25 +1,26 @@
 ---
 github:
-  active: true
+  gh_pages: web
 
 gem:
   active : true
 
 dnote:
-  service  : DNote
-  labels   : ~
-  output   : log/NOTES.rdoc
+  title: Developer's Notes
+  labels: ~
+  output: log/notes.html
 
 qed:
-  files: spec/*.rdoc
+  files: demo/*.rdoc
 
 qedoc:
+  files: demo
   title: Platypus Overview
-  files: spec/
-  output: SPEC.rdoc
+  output: DEMO.rdoc
 
 locat:
-  active   : false
+  output: log/locat.html
+  active: false
 
 email:
   file    : ~
@@ -29,20 +30,8 @@ email:
     - rubyworks-mailinglist@googlegroups.com
 
 vclog:
-  output: log/HISTORY.rdoc
+  output:
+    - log/history.html
+    - log/changes.html
 
-#ridoc:
-#  service: RIDoc
-#  include: ~
-#  exclude: ~
-#  output : .rdoc
-#  active : true
-
-#rdoc:
-#  service : RDoc
-#  format  : redfish
-#  include : ~
-#  exclude : [Syckfile]
-#  output  : site/docs/api
-#  active  : true
 

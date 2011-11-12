@@ -7,13 +7,9 @@ lib/platypus/type.rb
 lib/platypus/typecast.rb
 lib/platypus/version.rb
 lib/platypus.rb
-qed/01_intro.rdoc
-qed/02_typecast.rdoc
-qed/03_type.rdoc
-qed/04_overload.rdoc
 test/test_overload.rb
 HISTORY.rdoc
-SPEC.rdoc
+DEMO.rdoc
 README.rdoc
 NOTES.rdoc
 COPYING.rdoc

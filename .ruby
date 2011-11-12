@@ -1,8 +1,9 @@
 ---
 source:
-- Profile
+- var
 authors:
 - name: Thomas Sawyer
+  email: transfire@gmail.com
 - name: Jonas Pfenniger
 copyrights:
 - holder: Thomas Sawyer
@@ -33,12 +34,12 @@ extra: {}
 load_path:
 - lib
 revision: 0
+created: '2004-01-01'
+summary: Riding on Types with Ruby
+title: Platypus
 version: 1.0.2
 name: platypus
-title: Platypus
-summary: Riding on Types with Ruby
-created: '2004-01-01'
 description: Provides a complete double-dispatch type conversion system, method overloadability
   and psuedo-classes.
 organization: RubyWorks
-date: '2011-10-22'
+date: '2011-11-11'
