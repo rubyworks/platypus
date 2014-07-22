@@ -1,6 +1,8 @@
+*.lock
 .yardoc
-doc
-log
-pkg
-tmp
-web
+doc/
+log/
+pkg/
+tmp/
+web/
+

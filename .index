@@ -1,0 +1,48 @@
+---
+revision: 2013
+type: ruby
+sources:
+- index
+authors:
+- name: Thomas Sawyer
+  email: transfire@gmail.com
+- name: Jonas Pfenniger
+organizations: []
+requirements:
+- groups:
+  - test
+  development: true
+  name: qed
+conflicts: []
+alternatives: []
+resources:
+- type: home
+  uri: http://rubyworks.github.com/platypus
+  label: Homepage
+- type: code
+  uri: http://github.com/rubyworks/platypus
+  label: Source Code
+- type: mail
+  uri: http://googlegroups/group/rubyworks-mailinglist
+  label: Mailing List
+repositories:
+- name: upstream
+  scm: git
+  uri: http://rubyworks.github.com/platypus.git
+categories: []
+copyrights:
+- holder: Thomas Sawyer
+  year: '2004'
+  license: BSD-2-Clause
+customs: []
+paths:
+  lib:
+  - lib
+name: platypus
+title: Platypus
+summary: Riding on Types with Ruby
+created: '2004-01-01'
+description: Provides a complete double-dispatch type conversion system, method overloadability
+  and psuedo-classes.
+version: 1.0.2
+date: '2014-07-22'
