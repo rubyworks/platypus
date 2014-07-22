@@ -1,12 +1,18 @@
 
      _   ___
     / \ /   \
-    \. |: cc|    .---------.
-     (.|:,---,  <  Feel the \
-     (.|: \ c|   \ POWER!!! /
-     (.    y-'    '--------'
+    \. |: cc|     .---------.
+     (.|:,---,   <  Feel the \
+     (.|: \ c|    \ POWER!!! /
+     (.    y-'     '--------'
       \ _ /
        m m
+
+[![Gem Version](http://img.shields.io/gem/v/platypus.svg?style=flat)](http://rubygems.org/gem/platypus)
+[![Build Status](http://img.shields.io/travis/rubyworks/platypus.svg?style=flat)](http://travis-ci.org/rubyworks/platypus)
+[![Fork Me](http://img.shields.io/badge/scm-github-blue.svg?style=flat)](http://github.com/rubyworks/platypus)
+[![Report Issue](http://img.shields.io/github/issues/rubyworks/platypus.svg?style=flat)](http://github.com/rubyworks/platypus/issues)
+[![Gittip](http://img.shields.io/badge/gittip-$1-green.svg?style=flat)](https://www.gittip.com/on/github/rubyworks/)
 
 
 # Platypus
@@ -16,15 +22,6 @@
 
 <b>Platypus provides a generalized type conversion system,
 method overloading and psuedo-classes.</b>
-
-
-## Status
-
-[![Gem Version](http://img.shields.io/gem/v/platypus.svg?style=flat)](http://rubygems.org/gem/platypus)
-[![Build Status](http://img.shields.io/travis/rubyworks/platypus.svg?style=flat)](http://travis-ci.org/rubyworks/platypus)
-[![Fork Me](http://img.shields.io/badge/scm-github-blue.svg?style=flat)](http://github.com/rubyworks/platypus)
-[![Report Issue](http://img.shields.io/github/issues/rubyworks/platypus.svg?style=flat)](http://github.com/rubyworks/platypus/issues)
-[![Gittip](http://img.shields.io/badge/gittip-$1-green.svg?style=flat)](https://www.gittip.com/on/github/rubyworks/)
 
 
 ## Overview
@@ -40,51 +37,51 @@ Type conversion work like a rational duck might expect.
 You can of course define your own.
 
 ```ruby
-    class X
-      typecast String do |x|
-        "#{x}"
-      end
+  class X
+    typecast String do |x|
+      "#{x}"
     end
+  end
 ```
 
 To overload a method, mixin the Overloadable module and use the #overload (or #sig)
 method to define new functionality based on a specified type interface.
 
 ```ruby
-    class X
-      include Overloadable
+  class X
+    include Overloadable
 
-      def f
-        "f"
-      end
-
-      sig Integer
-      def f(i)
-        "f#{i}"
-      end
-
-      sig String, String
-      def f(s1, s2)
-        [s1, s2].join('+')
-      end
+    def f
+      "f"
     end
 
-    x = X.new
+    sig Integer
+    def f(i)
+      "f#{i}"
+    end
 
-    x.f          #=> "f"
-    x.f(1)       #=> "f1"
-    x.f("A","B") #=> "A+B"
+    sig String, String
+    def f(s1, s2)
+      [s1, s2].join('+')
+    end
+  end
+
+  x = X.new
+
+  x.f          #=> "f"
+  x.f(1)       #=> "f1"
+  x.f("A","B") #=> "A+B"
 ```
 
 Finally, the Platypus gives you the Type superclass (aka pseudo-classes).
 
 ```ruby
-    class KiloType < Type
-      x % 1000 == 0
-    end
+  class KiloType < Type
+    x % 1000 == 0
+  end
 
-    KiloType === 1000
-    KiloType === 2000
+  KiloType === 1000
+  KiloType === 2000
 ```
 
 To learn more about using Platypus see the [Demonstrundum](http://rubyworks.github.com/platypus/docs/demo).
