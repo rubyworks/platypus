@@ -1,3 +1,4 @@
+# Platypus
 
      _   ___
     / \ /   \
@@ -14,14 +15,13 @@
 [![Report Issue](http://img.shields.io/github/issues/rubyworks/platypus.svg?style=flat)](http://github.com/rubyworks/platypus/issues)
 [![Gittip](http://img.shields.io/badge/gittip-$1-green.svg?style=flat)](https://www.gittip.com/on/github/rubyworks/)
 
-
-# Platypus
-
 [Homepage](http://rubyworks.github.com/platypus) &middot;
-[Development](http://github.com/rubyworks/platypus)
+[Development](http://github.com/rubyworks/platypus) &middot;
+[Report Issue](http://github.com/rubyworks/platypus/issues)
 
 <b>Platypus provides a generalized type conversion system,
-method overloading and psuedo-classes.</b>
+method overloading and psuedo-classes for the Ruby programming
+language.</b>
 
 
 ## Overview
@@ -29,9 +29,9 @@ method overloading and psuedo-classes.</b>
 Type conversion work like a rational duck might expect.
 
 ```ruby
-    "1234".to(Float)    => 1234.0  (Float)
+  "1234".to(Float)    => 1234.0  (Float)
 
-    Time.from("6:30")   => 1234.0  (Time)
+  Time.from("6:30")   => 1234.0  (Time)
 ```
 
 You can of course define your own.
