@@ -1,14 +1,5 @@
 # Platypus
 
-     _   ___
-    / \ /   \
-    \. |: cc|     .---------.
-     (.|:,---,   <  Feel the \
-     (.|: \ c|    \ POWER!!! /
-     (.    y-'     '--------'
-      \ _ /
-       m m
-
 [![Gem Version](http://img.shields.io/gem/v/platypus.svg?style=flat)](http://rubygems.org/gem/platypus)
 [![Build Status](http://img.shields.io/travis/rubyworks/platypus.svg?style=flat)](http://travis-ci.org/rubyworks/platypus)
 [![Fork Me](http://img.shields.io/badge/scm-github-blue.svg?style=flat)](http://github.com/rubyworks/platypus)
@@ -120,4 +111,14 @@ Copyright (c) 2010 Rubyworks
 This program is ditributed unser the terms of the *FreeBSD* license.
 
 See LICENSE.txt file for details.
+
+
+     _   ___
+    / \ /   \
+    \. |: cc|     .---------.
+     (.|:,---,   <  Feel the \
+     (.|: \ c|    \ POWER!!! /
+     (.    y-'     '--------'
+      \ _ /
+       m m
 
