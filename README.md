@@ -31,21 +31,26 @@ method overloading and psuedo-classes.</b>
 
 Type conversion work like a rational duck might expect.
 
+```ruby
     "1234".to(Float)    => 1234.0  (Float)
 
     Time.from("6:30")   => 1234.0  (Time)
+```
 
 You can of course define your own.
 
+```ruby
     class X
       typecast String do |x|
         "#{x}"
       end
     end
+```
 
 To overload a method, mixin the Overloadable module and use the #overload (or #sig)
 method to define new functionality based on a specified type interface.
 
+```ruby
     class X
       include Overloadable
 
@@ -69,17 +74,20 @@ method to define new functionality based on a specified type interface.
     x.f          #=> "f"
     x.f(1)       #=> "f1"
     x.f("A","B") #=> "A+B"
+```
 
 Finally, the Platypus gives you the Type superclass (aka pseudo-classes).
 
+```ruby
     class KiloType < Type
       x % 1000 == 0
     end
 
     KiloType === 1000
     KiloType === 2000
+```
 
-To learn more about using Platypus see the Demonstrundum[http://rubyworks.github.com/platypus/docs/qed].
+To learn more about using Platypus see the [Demonstrundum](http://rubyworks.github.com/platypus/docs/demo).
 
 
 ## Installation
